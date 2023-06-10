@@ -17,16 +17,16 @@ const ProgressBar = (props) => {
       textAlign: 'right'
     }
   
-    const labelStyles = {
-      padding: 5,
-      color: 'white',
-      fontWeight: 'bold'
-    }
+    // const labelStyles = {
+    //   padding: 5,
+    //   color: 'white',
+    //   fontWeight: 'bold'
+    // }
   
     return (
       <div style={containerStyles}>
         <div style={fillerStyles}>
-          <span style={labelStyles}></span>
+          {/* <span style={labelStyles}></span> */}
         </div>
       </div>
     );

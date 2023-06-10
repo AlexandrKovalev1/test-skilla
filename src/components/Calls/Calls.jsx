@@ -1,12 +1,14 @@
-import ProgressBar from "../common/Progressbar/Progressbar";
+import SelectList from "../SelectList/SelectList";
+
+
 
 
 
 
 const Calls = (props) => {
     return (
-        <div>
-            <ProgressBar bgcolor='#00695c' completed='40'/>
+        <div style={{}}>
+
         </div>
     )
 }

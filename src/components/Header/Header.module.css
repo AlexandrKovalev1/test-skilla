@@ -1,46 +1,29 @@
 .header__wrapper {
     grid-area: header;
-    position: fixed;
-    top: 0;
-    width: 100%;
     background-color: white;
 }
 
 .container {
     display: flex;
+    justify-content: space-between;
     height: 64px;
-}
-
-.logo {
-    flex-shrink: 0;
-    width: 240px;
-    height: 64px;
-    padding-top: 20px;
-    padding-left: 12px;
-    background-color: #091336;
-}
-
-.content__wrapper {
-    display: flex;
-    width: 100%;
     padding: 0 120px;
-    height: 64px;
 }
 
-.statusbar__block {
-    display: inline-block;
-    min-width: 535px;
+.inform {
+    display: flex;
 }
 
 .current_day {
-    display: inline-block;
-    align-self: center;
+    flex-shrink: 0;
+    padding-top: 21px;
     margin-right: 83px;
     font-weight: 400;
     font-size: 15px;
     color: #899CB1;
 }
 
-.tools {
-
+.statusbar__block{
+    padding-top: 14px;
+    min-width: 596px;
 }

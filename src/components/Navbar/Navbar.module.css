@@ -8,10 +8,10 @@
     background-color: #091336;
 }
 
-.container {
-    position: fixed;
-    top: 80px;
-    left: 0;
+.logo {
+    padding-top: 20px;
+    padding-bottom: 25px;
+    padding-left: 12px;
 }
 
 
@@ -33,6 +33,7 @@
 
 .button:first-child {
     margin-bottom: 32px;
+    padding-left: 10px;
 }
 
 .button:last-child {
