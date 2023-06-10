@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
+import './fonts/sfProDisplay/stylesheet.css';
 import './App.css';
+import Calls from './components/Calls/Calls';
+import Header from './components/Header/Header';
+import NavbarContainer from './components/Navbar/NavbarContainer';
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app_wrapper">
+      <Header />
+      <NavbarContainer />
+
+      <main className='content_wrapper'>
+        <Routes>
+
+          <Route path='/calls?/?'
+            element={<Calls />}>
+          </Route>
+
+        </Routes>
+      </main>
     </div>
   );
+
 }
 
 export default App;

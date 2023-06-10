@@ -1,0 +1,14 @@
+.wrapper {
+    display: inline-block;
+}
+
+.wrapper:not(:last-child) {
+    margin-right: 58px;
+}
+
+.heading {
+    margin-bottom: 9px;
+    padding-top: 15px;
+    font-weight: 400;
+    font-size: 14px;
+}

@@ -1,0 +1,43 @@
+.nav__wrapper {
+    grid-area: nav;
+    height: 100vh;
+    font-family: 'SF Pro Display';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #091336;
+}
+
+.container {
+    position: fixed;
+    top: 80px;
+    left: 0;
+}
+
+
+.button__block {
+    padding: 0 20px;
+}
+
+.button {
+    display: grid;
+    grid-template-columns: 1fr 47.5px;
+    align-items: center;
+    justify-items: stretch;
+    width: 200px;
+    height: 52px;
+    color: #ffffff;
+    background-color: rgba(0, 95, 248, 1);
+    border-radius: 4px;
+}
+
+.button:first-child {
+    margin-bottom: 32px;
+}
+
+.button:last-child {
+    padding-left: 30px;
+}
+.button__heading {
+    justify-self: center;
+}
