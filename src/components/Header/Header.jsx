@@ -11,7 +11,8 @@ const Header = (props) => {
         <header className={classes.header__wrapper}>
             <div className={classes.container}>
                 <div className={classes.inform}>
-                    <div className={classes.current_day}>Среда , 13 окт</div>
+                    <div className={classes.current_day}>Среда , 13 окт
+                    </div>
                     <div className={classes.statusbar__block}>
                         <StatusBarItem heading='Новые звонки'
                             status='20 из 30 шт'
@@ -25,7 +26,8 @@ const Header = (props) => {
                             status='67%'
                             bgcolor='#EA1A4F'
                             completed='67' />
-                    </div></div>
+                    </div>
+                </div>
                 <div className={classes.section__tools}>
                     <div className={classes.search}>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

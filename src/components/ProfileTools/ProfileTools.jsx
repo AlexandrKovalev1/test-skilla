@@ -113,7 +113,7 @@ const ProfileTools = (props) => {
             </div>
             {isMenuOpen && (
                 <ul className={classes.select__wrapper}
-                    // onMouseLeave={toggleMenu}
+                    onMouseLeave={toggleMenu}
                 >
                     <UserSection
                         fullname={props.userBlock.fullname}

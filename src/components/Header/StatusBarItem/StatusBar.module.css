@@ -3,11 +3,9 @@
 }
 
 .wrapper:not(:last-child) {
-    margin-right: 58px;
 }
 
 .heading {
-    margin-bottom: 9px;
     font-weight: 400;
     font-size: 14px;
 }

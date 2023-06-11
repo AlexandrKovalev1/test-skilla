@@ -4,31 +4,21 @@
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    height: 64px;
-    padding: 0 120px;
 }
 
 .inform {
-    display: flex;
+
 }
 
 .current_day {
-    flex-shrink: 0;
-    padding-top: 21px;
-    margin-right: 83px;
     font-weight: 400;
     font-size: 15px;
     color: #899CB1;
 }
 
 .statusbar__block{
-    padding-top: 14px;
-    flex-shrink: 0;
 }
 
 .section__tools {
-    flex-shrink: 0;
     background-color: white;
 }
