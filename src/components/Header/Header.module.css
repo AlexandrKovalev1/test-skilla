@@ -25,5 +25,10 @@
 
 .statusbar__block{
     padding-top: 14px;
-    min-width: 596px;
+    flex-shrink: 0;
+}
+
+.section__tools {
+    flex-shrink: 0;
+    background-color: white;
 }

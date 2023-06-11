@@ -7,10 +7,10 @@ const NavItem = (props) => {
         <li className={classes.list__item}>
             <NavLink to={props.path}
                 className={({ isActive }) =>
-                    isActive ? classes.active : undefined}
+                    isActive ? classes.active : null}
             >
                 <div className={classes.item__wrapper}>
-                    <div className={classes.current_regtangle}></div>
+                    <div className={classes.decorative__strip}></div>
                     <div className={classes.item__icon}>
                         {props.icon}
                     </div>

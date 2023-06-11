@@ -9,7 +9,7 @@ margin-bottom: 64px;
     height: 52px;
 }
 
-.current_regtangle {
+.decorative__strip {
     height: 100%;
     width: 3px;
 }
@@ -34,7 +34,7 @@ a.active .item__wrapper {
     background-color: rgba(216, 228, 251, 0.32);
 }
 
-a.active .current_regtangle {
+a.active .decorative__strip {
     background-color: rgba(0, 44, 251, 1);
 }
 

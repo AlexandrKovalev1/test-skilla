@@ -3,5 +3,12 @@
 //     Authorization:'Bearer testtoken'
 //   }
 
+import axios from "axios";
+
 
 // }).then(response => console.log(response.data.results[7]))
+
+// axios.post('https://api.skilla.ru/partnership/getProfile', {}, {
+//        headers:{
+//          Authorization:'Bearer testtoken'
+//       }}).then(response => console.log(response))

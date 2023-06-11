@@ -1,4 +1,4 @@
-import SelectList from '../SelectList/SelectList';
+import ProfileToolsContainer from '../../components/ProfileTools/ProfileToolsContainer';
 import classes from './Header.module.css';
 import StatusBarItem from './StatusBarItem/StatusBarItem';
 
@@ -26,10 +26,6 @@ const Header = (props) => {
                             bgcolor='#EA1A4F'
                             completed='67' />
                     </div></div>
-
-
-
-
                 <div className={classes.section__tools}>
                     <div className={classes.search}>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +35,7 @@ const Header = (props) => {
                     <div className={classes.select}>ИП Сидорова Александра Михайловна</div>
 
                 </div>
-                <div className={classes.user__tools}><SelectList /></div>
+                <div className={classes.user__tools}><ProfileToolsContainer /></div>
             </div>
         </header>
     )

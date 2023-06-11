@@ -23,7 +23,6 @@
     display: grid;
     grid-template-columns: 1fr 47.5px;
     align-items: center;
-    justify-items: stretch;
     width: 200px;
     height: 52px;
     color: #ffffff;
@@ -39,6 +38,16 @@
 .button:last-child {
     padding-left: 30px;
 }
+
+
 .button__heading {
     justify-self: center;
+}
+
+.button:hover {
+    background-color: #0024CB;
+}
+
+.button:active {
+    background-color: #274BC8;
 }

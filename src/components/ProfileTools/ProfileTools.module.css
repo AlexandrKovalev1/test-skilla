@@ -1,0 +1,151 @@
+/*  selectComponent css */
+
+.button__select {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 15px;
+    color: #5E7793;
+}
+
+.select__user__tools div {
+    display: inline-block;
+}
+
+.user__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #EFEFEF;
+}
+
+.arrow {
+    position: absolute;
+    top: 40%;
+    padding-left: 10px;
+}
+
+.select__wrapper {
+    z-index: 5;
+    position: absolute;
+    left: -220px;
+    width: 370px;
+    padding-bottom: 32px;
+    background-color: white;
+    border: 1px solid #EAF0FA;
+    border-radius: 4px;
+    box-shadow: 4px 16px 50px 0px #8187A33D;
+}
+
+
+/* user section css */
+.container__user {
+    padding-top: 20px;
+    margin: 0 32px 16px 32px;
+    border-bottom: 1px solid #EAF0FA;
+}
+
+div.container__user div div {
+    display: inline-block;
+
+}
+
+.user__name {
+    padding: 0 160px 6px 0;
+    font-weight: 500;
+    font-size: 18px;
+    color: #122945;
+}
+
+div.item__exit__wrapper:hover svg.icon__exit path {
+    fill: #002CFB;
+}
+
+div.item__exit__wrapper:active svg.icon__exit path {
+    fill: #274BC8;
+}
+
+.user__info {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+
+.point__icon {
+    display: flex;
+    align-items: center;
+    margin: 0 8px;
+    width: 4px;
+    height: 4px;
+    background-color: #ADBFDF;
+    border-radius: 50%;
+}
+
+.phone {
+    padding-bottom: 8px;
+}
+
+.phone__icon {
+    padding-right: 12px;
+}
+
+.email {
+    padding-bottom: 16px;
+}
+
+.email__icon {
+    padding-right: 10.33px;
+}
+
+
+/* departament section css*/
+
+.header{
+    padding-left: 32px;
+    padding-bottom: 16px;
+}
+
+
+
+
+
+/* worker css*/
+.worker__wrapper {
+    position: relative;
+    padding: 8px 32px;
+    color: #005FF8;
+}
+
+.worker__wrapper:hover {
+    color: #0024CB;
+    background-color: rgba(0, 44, 251, 0.13);
+}
+
+.worker__wrapper a {
+
+    display: flex;
+    align-items: center;
+}
+
+
+.worker__avatar {
+    padding-right: 12px;
+}
+
+.worker__avatar__img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.worker__wrapper:hover div.look__profile__svg {
+    display: inline-block;
+}
+
+
+.look__profile__svg {
+    display: none;
+    position: absolute;
+    right: 32px;
+}
