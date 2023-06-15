@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import './fonts/sfProDisplay/stylesheet.css';
 import './App.css';
-import Calls from './components/Calls/Calls';
 import Header from './components/Header/Header';
 import NavbarContainer from './components/Navbar/NavbarContainer';
+import CallsContainer from './components/Calls/Calls.container';
 
 
 
@@ -18,7 +18,7 @@ function App() {
         <Routes>
 
           <Route path='/calls?/?'
-            element={<Calls />}>
+            element={<CallsContainer />}>
           </Route>
 
         </Routes>

@@ -1,14 +1,13 @@
-
 .app_wrapper {
   display: grid;
   grid-template-columns: 240px 1fr;
   grid-template-rows: 64px 1fr;
-  grid-template-areas: 
-  'nav header'
-  'nav main';
+  grid-template-areas:
+    'header header'
+    'nav main';
 }
 
 .content_wrapper {
   grid-area: main;
-  background-color: #E5E5E5;
+  background-color: #F1F4F9;
 }

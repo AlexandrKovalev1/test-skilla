@@ -91,8 +91,7 @@ const ProfileTools = (props) => {
 
     return (
 
-        <div className={classes.button__select}
-        >
+        <div className={classes.button__select}>
             <div onClick={toggleMenu} className={classes.select__user__tools}>
                 <div>
                     <img src={props.userBlock.avatar} className={classes.user__avatar} alt='userAvatar' />

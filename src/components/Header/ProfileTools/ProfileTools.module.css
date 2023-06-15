@@ -1,29 +1,27 @@
 /*  selectComponent css */
-
 .button__select {
     position: relative;
     display: inline-block;
-    font-weight: 400;
     font-size: 15px;
     color: #5E7793;
+    cursor: pointer;
 }
 
-.select__user__tools div {
-    display: inline-block;
+
+.select__user__tools {
+    display: flex;
+    align-items: center;
 }
+
 
 .user__avatar {
     width: 40px;
     height: 40px;
+margin-right: 10px;
     border-radius: 50%;
     background-color: #EFEFEF;
 }
 
-.arrow {
-    position: absolute;
-    top: 40%;
-    padding-left: 10px;
-}
 
 .select__wrapper {
     z-index: 5;
@@ -101,7 +99,7 @@ div.item__exit__wrapper:active svg.icon__exit path {
 
 /* departament section css*/
 
-.header{
+.header {
     padding-left: 32px;
     padding-bottom: 16px;
 }

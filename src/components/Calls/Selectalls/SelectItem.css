@@ -1,0 +1,174 @@
+li.list__item:not(:last-child) {
+    margin-right:22px ;
+}
+
+/* input styles */
+.custom_prefix__control {
+    min-height: 0 !important;
+    border: none !important;
+    background-color: inherit !important;
+    cursor: pointer !important;
+
+}
+
+.custom_prefix__placeholder {
+    color: rgba(94, 119, 147, 0.87) !important;
+}
+
+div.custom_prefix__control--menu-is-open div.custom_prefix__value-container div.custom_prefix__placeholder {
+    color: black !important;
+}
+
+div.custom_prefix__control--menu-is-open div.custom_prefix__indicators div.custom_prefix__indicator svg {
+    transform: rotate(180deg) !important;
+    color: rgba(0, 44, 251, 1) !important;
+}
+
+.custom_prefix__control--is-focused {
+    box-shadow: none !important;
+    color: rgba(0, 44, 251, 1) !important;
+}
+
+.custom_prefix__value-container {
+    padding: 0 !important;
+    padding-right: 7px !important;
+}
+
+
+.custom_prefix__value-container div.raiting__bad,
+.custom_prefix__value-container div.raiting__good,
+.custom_prefix__value-container div.raiting__perfect,
+.custom_prefix__value-container div.new__component {
+    all: unset;
+}
+
+.custom_prefix__value-container img.person__avatar {
+    display: none;
+}
+
+.custom_prefix__single-value {
+    margin: 0 !important;
+    color: rgba(0, 44, 251, 1) !important;
+}
+
+.custom_prefix__indicator-separator {
+    display: none !important;
+}
+
+.custom_prefix__indicator {
+    padding: 0 !important;
+    align-items: center;
+}
+
+.custom_prefix__indicator svg {
+    color: rgb(173, 191, 223) !important;
+}
+
+/* menu styles */
+
+.custom_prefix__menu {
+    width: 204px !important;
+    right: -10px !important;
+    margin: 0 !important;
+    margin-top: 12px !important;
+    border: 1px solid rgba(234, 240, 250, 1) !important;
+    box-shadow: 0px 0px 26px 0px rgba(233, 237, 243, 0.8) !important;
+
+}
+
+.custom_prefix__menu-list {
+    padding: 0 !important;
+    color: rgba(137, 156, 177, 1) !important;
+}
+
+.custom_prefix__option--is-selected {
+    color: rgba(0, 44, 251, 1) !important;
+    background-color: inherit !important;
+}
+
+.custom_prefix__option--is-focused {
+    color: rgba(18, 41, 69, 1) !important;
+    background-color: rgba(0, 44, 251, 0.13) !important;
+}
+
+/* menu items styles */
+.persons {
+    display: flex;
+    align-items: center;
+}
+
+.person__avatar {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+.new__component {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 8px;
+    background-color: rgba(255, 213, 0, 1);
+    border-radius: 50%;
+}
+
+.raiting__bad,
+.raiting__good,
+.raiting__perfect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+    border-radius: 4px;
+}
+
+.raiting__bad {
+    width: 55px;
+    color: rgba(234, 26, 79, 1);
+    background-color: rgba(254, 233, 239, 1);
+    border: 1px solid rgba(234, 26, 79, 1);
+}
+
+.raiting__good {
+    width: 66px;
+    border: 1px solid #ADBFDF;
+    background-color: #D8E4FB;
+}
+
+.raiting__perfect {
+    width: 70px;
+    color: rgba(0, 167, 117, 1);
+    border: 1px solid rgba(40, 168, 121, 1);
+    background-color: rgba(219, 248, 239, 1);
+}
+
+.raiting__point {
+    display: flex;
+    align-items: center;
+}
+
+.raiting__red__point,
+.raiting__grey__point,
+.raiting__green__point {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.raiting__grey__point:not(:last-child),
+.raiting__green__point:not(:last-child) {
+    margin-right: 2px;
+}
+
+.raiting__red__point {
+    background-color: rgba(234, 26, 79, 1);
+}
+
+.raiting__grey__point {
+    background-color: rgba(173, 191, 223, 1);
+}
+
+.raiting__green__point {
+    background-color: rgba(40, 168, 121, 1);
+}

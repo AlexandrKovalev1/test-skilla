@@ -1,0 +1,112 @@
+/* widget */
+
+.widget__wrapper {
+    position: relative;
+}
+
+.body__widget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 114px;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+}
+
+.content:hover svg path {
+    fill: #005FF8;
+}
+
+.value {
+    padding-left: 8px;
+    color: #005FF8;
+}
+
+.button:hover svg path {
+    fill: #005FF8;
+}
+
+/*select*/
+
+.select__data {
+    position: absolute;
+    right: 0;
+    margin-top: 11px;
+    width: 204px;
+    height: 211px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 0px 26px 0px #E9EDF3CC;
+    z-index: 20;
+
+}
+
+.select__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.select__list li {
+    padding-left: 20px;
+    width: 100%;
+}
+
+.element__days {
+    color: #002CFB;
+}
+
+.element__days__input {
+    margin-right: 10px;
+    width: 28px;
+    outline: #002CFB;
+    border: none;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+.select__item:not(:last-child) {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    color: #899CB1;
+    cursor: pointer;
+}
+
+.select__item:not(:last-child):hover {
+    color: #122945;
+    background-color: rgba(0, 44, 251, 0.13);
+}
+
+
+.inputs__block {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    width: 116px;
+    height: 28px;
+}
+
+.calendar__icon {
+    cursor: pointer;
+}
+
+.calendar__icon:hover svg path {
+    fill: #002CFB;
+    
+}

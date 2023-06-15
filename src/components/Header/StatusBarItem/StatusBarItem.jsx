@@ -1,5 +1,5 @@
 import classes from './StatusBar.module.css';
-import ProgressBar from "../../common/Progressbar/Progressbar";
+import ProgressBar from "../Progressbar/Progressbar";
 
 
 

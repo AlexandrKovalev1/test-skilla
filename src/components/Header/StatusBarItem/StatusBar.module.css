@@ -3,9 +3,11 @@
 }
 
 .wrapper:not(:last-child) {
+    padding-right: 56px;
 }
 
 .heading {
+    padding-bottom: 8px;
     font-weight: 400;
     font-size: 14px;
 }

@@ -1,0 +1,156 @@
+/* Section settings */
+
+.container {
+    padding: 0 120px;
+}
+
+.balance__and__days {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 0 14px 0;
+}
+
+.balance {
+    display: flex;
+    justify-content: space-between;
+    width: 145px;
+    height: 40px;
+    padding: 0 12px;
+    margin-right: 48px;
+    border-radius: 48px;
+    background-color: #ffffff;
+
+}
+
+.balance__header {
+    font-size: 14px;
+    align-self: center;
+    color: #899CB1;
+}
+
+.balance__value {
+    color: #122945;
+}
+
+.balance__icon {
+    padding-top: 8px;
+    cursor: pointer;
+}
+
+.balance__value:hover {
+    color: #0024CB;
+}
+
+.balance__icon:hover svg path {
+    fill: #0024CB;
+}
+
+.balance__icon:active svg path {
+    fill: #274BC8;
+
+}
+
+.separator {
+    flex-grow: 0;
+}
+
+.block__settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.search__item {
+    display: flex;
+    align-items: center;
+}
+
+.search__item__wrapper {
+    padding-right: 12px;
+}
+
+.setting__items__list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.search__heading {
+    color: rgba(94, 119, 147, 1);
+}
+
+.item__clearSetting {
+    display: flex;
+    align-items: center;
+    margin-right: 51px;
+    cursor: pointer;
+}
+
+.item__heading {
+    padding-right: 8px;
+    color: rgba(94, 119, 147, 1);
+}
+
+/* section content */
+
+
+.content {
+    min-width: 918px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+
+.content__header__left,
+.content__header__center,
+.content__header__end {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+table.table__data {
+    padding: 0 40px;
+    table-layout: fixed;
+    width: 100%;
+}
+
+tr.table__data__row {
+    height: 61px;
+    align-items: start;
+}
+
+tr.table__data__row th {
+    color: rgba(137, 156, 177, 1);
+    font-weight: 400;
+    text-align: start;
+}
+
+thead.table__data__header th:nth-child(1) {
+    width: 3.897%;
+}
+
+thead.table__data__header th:nth-child(2) {
+    width: 6.544%;
+}
+
+thead.table__data__header th:nth-child(3) {
+    width: 9.412%;
+}
+
+thead.table__data__header th:nth-child(4) {
+    width: 23.971%;
+}
+
+thead.table__data__header th:nth-child(5) {
+    width: 15.735%;
+}
+
+thead.table__data__header th:nth-child(6) {
+    width: 33.897%;
+}

@@ -8,12 +8,10 @@
     background-color: #091336;
 }
 
-.logo {
-    padding-top: 20px;
-    padding-bottom: 25px;
-    padding-left: 12px;
+.container {
+    position: fixed;
+    top: 80px;
 }
-
 
 .button__block {
     padding: 0 20px;
@@ -26,6 +24,7 @@
     width: 200px;
     height: 52px;
     color: #ffffff;
+    cursor: pointer;
     background-color: rgba(0, 95, 248, 1);
     border-radius: 4px;
 }
