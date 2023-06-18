@@ -1,0 +1,33 @@
+.inBody__row__data {
+    height: 65px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(234, 240, 250, 1);
+}
+
+.outgoing_true,
+.outgoing_false {
+    transform: rotate(180deg);
+}
+
+.outgoing_false path,
+.incoming_false path {
+    fill: rgba(234, 26, 79, 1);
+}
+
+.outgoing_true path {
+    fill: rgba(0, 95, 248, 1);
+}
+
+.personal__avatar {
+    padding-right: 46px;
+}
+
+.personal__avatar__img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.contactName {
+
+}

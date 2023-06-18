@@ -3,6 +3,7 @@ import classes from './Calls.module.css'
 import WidgetDaysContainer from './WidgetDays/WidgetDaysContainer';
 import SearchItem from '../common/SearchItem/SearchItem';
 import SelectItem from './Selectalls/SelectItem';
+import CallItem from './CallItem/CallItem';
 
 
 
@@ -10,7 +11,6 @@ import SelectItem from './Selectalls/SelectItem';
 
 
 const Calls = (props) => {
-
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const toggleSearch = () => setIsSearchOpen((isOpen) => !isOpen);
 
@@ -21,11 +21,17 @@ const Calls = (props) => {
     return arr.some(even);
   };
 
+
+  const filterDataForType = (array, param) => {
+    return array.filter(el => param !== '' ? el.in_out === +param : el)
+  }
+
   let isSetValueSelect = getIsSetValue(props.selects);
 
 
   let selectItem = props.selects.map(item =>
     <SelectItem
+      setFilterValue={props.setFilterValue}
       setValueSelect={props.setValueSelect}
       placeholder={item.placeholder}
       value={item.selectValue}
@@ -33,6 +39,32 @@ const Calls = (props) => {
       id={item.id}
       key={item.id}
     />)
+
+
+  let callElements = filterDataForType(props.callsData, props.filter).map(item =>
+    <CallItem
+      status={item.status}
+      inOut={item.in_out}
+      fullDate={item.date}
+
+      avatar={item.person_avatar !== '' ?
+        item.person_avatar
+        : 'https://lk.skilla.ru/img/noavatar.jpg'}
+
+      fromSite={item.from_site}
+
+      contactName={item.contact_name}
+      contactCompany={item.contact_company}
+      number={item.in_out ? item.from_number : item.to_number}
+      source={item.source}
+      time={item.time}
+      key={item.id}
+
+    />
+
+
+
+  )
 
   return (
     <div >
@@ -71,7 +103,10 @@ const Calls = (props) => {
             </div>
             <ul className={classes.setting__items__list}>
               {isSetValueSelect
-                ? <li className={classes.item__clearSetting} onClick={props.resetFilters}>
+                ? <li className={classes.item__clearSetting} onClick={() => {
+                  props.resetFilters()
+                  props.setFilterValue('')
+                }}>
                   <div className={classes.item__heading}>
                     Сбросить фильтры
                   </div>
@@ -89,10 +124,10 @@ const Calls = (props) => {
       </section >
       <section className={classes.section__content}>
         <div className={classes.container}>
-          <div className={classes.content}>
+          <div className={classes.content__data}>
             <table className={classes.table__data}>
               <thead className={classes.table__data__header}>
-                <tr className={classes.table__data__row}>
+                <tr className={classes.table__header__data__row}>
                   <th>Тип</th>
                   <th>Время</th>
                   <th>Сотрудник</th>
@@ -102,7 +137,9 @@ const Calls = (props) => {
                   <th>Длительность</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody className={classes.body__data}>
+                {callElements}
+              </tbody>
             </table>
 
           </div>

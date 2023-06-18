@@ -2,17 +2,32 @@ const PLUS_DAY = 'PLUS-DAY';
 const MINUS_DAY = 'MINUS-DAY';
 const SET_DAYS = 'SET-DAYS';
 const SET_VALUE_SELECT = 'SET-VALUE-SELECT';
-const RESET_FILTERS = 'RESET_FILTERS';
+const RESET_FILTERS = 'RESET-FILTERS';
 const SET_IS_FETCHING = 'SET-IS-FETCHING';
+const SET_CALLS_DATA = 'SET-CALLS-DATA';
+const SET_FROM_AND_TO_DATA = 'SET-FROM-AND-TO-DATA';
+const SET_PARAMS_TO_FILTER = 'SET_PARAMS_TO_FILTER';
+
+
+let dataFrom = new Date();
+let formatedDateFrom = [dataFrom.getFullYear(),
+'0' + (dataFrom.getMonth() + 1),
+'0' + dataFrom.getDate()].map((item, index) => index === 0 ? item : item.slice(-2)).join('-');
+
+let dateTo = [dataFrom.getFullYear(),
+'0' + (dataFrom.getMonth() + 1),
+'0' + (dataFrom.getDate() - 1)].map((item, index) => index === 0 ? item : item.slice(-2)).join('-');
+
+
 
 
 
 let initialState = {
-    results: [
+    callsData: [
         {
             abuse: [],
             contact_company: "",
-            contact_name: "",
+            contact_name: "жил был",
             date: "2023-02-03 17:00:50",
             date_notime: "2023-02-03",
             disconnect_reason: "",
@@ -36,12 +51,46 @@ let initialState = {
             person_surname: "**",
             record: "MToxMDA2NzYxNToxNDMwMDM3NzExNzow",
             results: [],
-            source: "",
+            source: "Rabota.ru",
             stages: [],
             status: "Дозвонился",
             time: 7,
             to_extension: "",
             to_number: "790**49**",
+        },
+        {
+            abuse: [],
+            contact_company: "Compani",
+            contact_name: "",
+            date: "2023-02-03 20:00:22",
+            date_notime: "2023-02-03",
+            disconnect_reason: "",
+            errors: [],
+            from_extension: "105",
+            from_number: "795**16**",
+            from_site: 1,
+            id: 5960786,
+            in_out: 0,
+            is_skilla: 0,
+            line_number: "sip**se**",
+            partner_data: {
+                id: "578",
+                name: "ООО \"ГРУЗЧИКОВ-СЕРВИС СПБ\"",
+                phone: "74951205096",
+            },
+            partnership_id: "578",
+            person_avatar: '',
+            person_id: 2731,
+            person_name: "**",
+            person_surname: "**",
+            record: "MToxMDA2NzYxNToxNDMwMDM3NzExNzow",
+            results: [],
+            source: "",
+            stages: [],
+            status: "Не дозвонился",
+            time: 16,
+            to_extension: "",
+            to_number: "",
         },
         {
             abuse: [],
@@ -54,8 +103,42 @@ let initialState = {
             from_extension: "105",
             from_number: "sip**10**",
             from_site: 0,
-            id: 5960786,
-            in_out: 0,
+            id: 5960780,
+            in_out: 1,
+            is_skilla: 0,
+            line_number: "sip**se**",
+            partner_data: {
+                id: "578",
+                name: "ООО \"ГРУЗЧИКОВ-СЕРВИС СПБ\"",
+                phone: "74951205096",
+            },
+            partnership_id: "578",
+            person_avatar: "https://lk.skilla.ru/img/noavatar.jpg",
+            person_id: 2731,
+            person_name: "**",
+            person_surname: "**",
+            record: "MToxMDA2NzYxNToxNDMwMDM3NzExNzow",
+            results: [],
+            source: "",
+            stages: [],
+            status: "Пропущенный",
+            time: 16,
+            to_extension: "",
+            to_number: "795**16**",
+        },
+        {
+            abuse: [],
+            contact_company: "",
+            contact_name: "",
+            date: "2023-02-03 20:00:22",
+            date_notime: "2023-02-03",
+            disconnect_reason: "",
+            errors: [],
+            from_extension: "105",
+            from_number: "sip**10**",
+            from_site: 0,
+            id: 5960784,
+            in_out: 1,
             is_skilla: 0,
             line_number: "sip**se**",
             partner_data: {
@@ -84,12 +167,12 @@ let initialState = {
     selects: [
         {
             id: 1,
-            selectValue: null,
+            selectValue: '',
             placeholder: 'Все типы',
             params: [
                 { value: '', label: 'Все звонки ' },
-                { value: '1', label: ' Входящие ' },
-                { value: '0', label: 'Исходящие' },
+                { value: 1, label: ' Входящие ' },
+                { value: 0, label: 'Исходящие' },
             ]
         },
         {
@@ -243,9 +326,13 @@ let initialState = {
 
 
     ],
-    isFetching: false,
-}
 
+    isFetching: false,
+    filterParamsForType: '',
+    dateFrom: formatedDateFrom,
+    dateTo: dateTo,
+
+}
 
 
 
@@ -305,7 +392,7 @@ const callsReducer = (state = initialState, action) => {
     if (action.type === RESET_FILTERS) {
         return {
             ...state,
-            selects: state.selects.map(select => ({ ...select, selectValue: null }))
+            selects: state.selects.map(select => ({ ...select, selectValue: '' }))
         }
     }
 
@@ -313,12 +400,28 @@ const callsReducer = (state = initialState, action) => {
         return { ...state, isFetching: action.isFetching };
     }
 
+    if (action.type === SET_CALLS_DATA) {
+        return { ...state, callsData: [...action.data] }
+    }
+
+    if (action.type === SET_FROM_AND_TO_DATA) {
+        return { ...state, dateFrom: action.from, dateTo: action.to }
+    }
+
+    if (action.type === SET_PARAMS_TO_FILTER) {
+        return {
+            ...state, filterParamsForType: action.parametr
+        }
+    }
+
     return state;
 
 }
 
 
-
+export const setFilterValue = (parametr) => ({ type: SET_PARAMS_TO_FILTER, parametr })
+export const setFromAndToData = (from, to) => ({ type: SET_FROM_AND_TO_DATA, from, to });
+export const setCallsData = (data) => ({ type: SET_CALLS_DATA, data });
 export const setIsFetching = (isFetching) => ({ type: SET_IS_FETCHING, isFetching })
 export const setValueSelect = (id, value) => ({ type: SET_VALUE_SELECT, id, value })
 export const plusDay = () => ({ type: PLUS_DAY });

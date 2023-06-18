@@ -1,14 +1,45 @@
-// axios.post('https://api.skilla.ru/mango/getList?date_start=2023-01-01&date_end=2023-02-03&in_out=', {}, {
-//   headers:{
-//     Authorization:'Bearer testtoken'
-//   }
-
 import axios from "axios";
+let secondsInDay, dateStartDefaul, dateEndDefault;
 
 
-// }).then(response => console.log(response.data.results[7]))
+const formatDate = (date) => {
+    let formatedDate = [date.getFullYear(),
+    '0' + (parseInt(date.getMonth() + 1)),
+    '0' + date.getDate()].map((item, index) => {
+        return index === 0 ? item : item.slice(-2);
+    }).join('-');
 
-// axios.post('https://api.skilla.ru/partnership/getProfile', {}, {
-//        headers:{
-//          Authorization:'Bearer testtoken'
-//       }}).then(response => console.log(response))
+    return formatedDate;
+}
+
+secondsInDay = 84000 * 1000;
+
+dateStartDefaul = formatDate(new Date(new Date() - secondsInDay * 2));
+
+dateEndDefault = formatDate(new Date());
+
+const instance = axios.create({
+    withCredentials: true,
+    baseURL: 'https://api.skilla.ru/mango/getList?',
+    headers: {
+        Authorization: 'Bearer testtoken',
+    }
+});
+
+
+
+export const getCalls = (dataStart = dateStartDefaul, dataEnd = dateEndDefault) => {
+
+    return instance.post(
+        `date_start=${dataStart}&date_end=${dataEnd}&in_out=&limit=1500`, {})
+        .then(response => response.data)
+
+};
+
+export const getCallsOnDays = (days = 3, dataEnd = formatDate(new Date())) => {
+    let dataStart = new Date(new Date(dataEnd) - days * secondsInDay)
+
+    return instance.post(
+        `date_start=${formatDate(dataStart)}&date_end=${dataEnd}&in_out=&limit=200`, {})
+        .then(response => response.data)
+}

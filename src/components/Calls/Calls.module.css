@@ -1,5 +1,4 @@
 /* Section settings */
-
 .container {
     padding: 0 120px;
 }
@@ -98,10 +97,11 @@
 /* section content */
 
 
-.content {
+.content__data {
     min-width: 918px;
     width: 100%;
     background-color: #ffffff;
+    padding: 0 40px;
 }
 
 
@@ -115,17 +115,21 @@
 }
 
 table.table__data {
-    padding: 0 40px;
     table-layout: fixed;
     width: 100%;
+    border-collapse: collapse;
+
 }
 
-tr.table__data__row {
+
+
+.table__header__data__row {
     height: 61px;
     align-items: start;
+    border-bottom: 1px solid rgba(234, 240, 250, 1)
 }
 
-tr.table__data__row th {
+tr.table__header__data__row th {
     color: rgba(137, 156, 177, 1);
     font-weight: 400;
     text-align: start;

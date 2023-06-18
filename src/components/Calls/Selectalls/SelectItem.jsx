@@ -9,10 +9,11 @@ const SelectItem = (props) => {
         value: Object.keys(item).length > 10 ? item.person_id : item.value,
         label: Object.keys(item).length > 10 ? <div className='persons'>
             <img className='person__avatar' src={item.person_avatar
-            ?item.person_avatar
-        : 'https://lk.skilla.ru/img/noavatar.jpg'
-        } alt="" />
-            <span>{`${item.person_name} ${item.person_surname[0]}.`}</span>
+                ? item.person_avatar
+                : 'https://lk.skilla.ru/img/noavatar.jpg'
+            } alt="" />
+            <span>{`${(item.person_name === '' || item.person_name === '**') ? 'Имя не указано или скрыто' : item.person_name
+                } ${item.person_surname[0]}.`}</span>
         </div>
             : item.type ? <div>
                 <span>{item.label}</span>< div className='new__component'></div>
@@ -21,7 +22,6 @@ const SelectItem = (props) => {
         id: props.id,
     }))
 
-    console.log(options)
 
     return <li className='list__item'>
 
@@ -31,9 +31,12 @@ const SelectItem = (props) => {
             isOptionSelected={true}
             classNamePrefix='custom_prefix'
             isSearchable={false}
-            onChange={(e) => { props.setValueSelect(e.id, e)}}
+            onChange={(e) => {
+                props.setValueSelect(e.id, e)
+                props.setFilterValue(e.value)
+            }}
             options={options}
-            // menuIsOpen={true}
+        // menuIsOpen={true}
         />
     </li >;
 }
