@@ -4,6 +4,7 @@ import WidgetDaysContainer from './WidgetDays/WidgetDaysContainer';
 import SearchItem from '../common/SearchItem/SearchItem';
 import SelectItem from './Selectalls/SelectItem';
 import CallItem from './CallItem/CallItem';
+import Player from './CallItem/Player/Player';
 
 
 
@@ -43,10 +44,13 @@ const Calls = (props) => {
 
   let callElements = filterDataForType(props.callsData, props.filter).map(item =>
     <CallItem
+      partnerId={item.partnership_id}
+      getVoise={props.getVoise}
+      voise={props.voise}
       status={item.status}
       inOut={item.in_out}
       fullDate={item.date}
-
+      record={item.record}
       avatar={item.person_avatar !== '' ?
         item.person_avatar
         : 'https://lk.skilla.ru/img/noavatar.jpg'}
@@ -120,7 +124,6 @@ const Calls = (props) => {
           </div>
         </div>
 
-
       </section >
       <section className={classes.section__content}>
         <div className={classes.container}>
@@ -136,6 +139,7 @@ const Calls = (props) => {
                   <th>Оценка</th>
                   <th>Длительность</th>
                 </tr>
+
               </thead>
               <tbody className={classes.body__data}>
                 {callElements}

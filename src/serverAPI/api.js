@@ -43,3 +43,22 @@ export const getCallsOnDays = (days = 3, dataEnd = formatDate(new Date())) => {
         `date_start=${formatDate(dataStart)}&date_end=${dataEnd}&in_out=&limit=200`, {})
         .then(response => response.data)
 }
+
+
+export const getVoiseRecord = (record, id) => {
+    return axios.post(`https://api.skilla.ru/mango/getRecord?record=${record}&partnership_id=${id}`, {}, {
+        responseType: 'blob',
+        headers: {
+            Authorization: 'Bearer testtoken',
+            'Content-Type': 'audio/mpeg'
+        }
+        
+    }
+    )
+    
+}
+
+
+
+
+// MToxMDA2NzYxNToxNDMwMDM3NzExNzow 578

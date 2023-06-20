@@ -2,6 +2,11 @@
     display: flex;
 }
 
+.input__twoSimbol,
+.input__fourSimbol,
+.calendar__icon {
+    all: unset;
+}
 
 .input__twoSimbol {
     max-width: 18px;
@@ -13,23 +18,4 @@
 
 .calendar__icon:hover svg path {
     fill: rgba(0, 44, 251, 1);
-}
-
-.calendar__icon,
-.input__fourSimbol,
-.input__twoSimbol {
-    border: none;
-}
-
-.input__twoSimbol:active,
-.input__twoSimbol:hover,
-.input__twoSimbol:focus,
-.input__fourSimbol:active,
-.input__fourSimbol:hover,
-.input__fourSimbol:focus,
-.calendar__icon:active,
-.calendar__icon:hover,
-.calendar__icon:focus {
-    outline: 0;
-    outline-offset: 0;
 }

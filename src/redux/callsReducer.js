@@ -7,6 +7,7 @@ const SET_IS_FETCHING = 'SET-IS-FETCHING';
 const SET_CALLS_DATA = 'SET-CALLS-DATA';
 const SET_FROM_AND_TO_DATA = 'SET-FROM-AND-TO-DATA';
 const SET_PARAMS_TO_FILTER = 'SET_PARAMS_TO_FILTER';
+const SET_VOISE = 'SET-VOISE';
 
 
 let dataFrom = new Date();
@@ -331,6 +332,7 @@ let initialState = {
     filterParamsForType: '',
     dateFrom: formatedDateFrom,
     dateTo: dateTo,
+    voise: '',
 
 }
 
@@ -414,11 +416,15 @@ const callsReducer = (state = initialState, action) => {
         }
     }
 
+    if (action.type === SET_VOISE) {
+        return{...state, voise:action.voise}
+    }
+
     return state;
 
 }
 
-
+export const SetVoise = (voise) =>({type:SET_VOISE,voise})
 export const setFilterValue = (parametr) => ({ type: SET_PARAMS_TO_FILTER, parametr })
 export const setFromAndToData = (from, to) => ({ type: SET_FROM_AND_TO_DATA, from, to });
 export const setCallsData = (data) => ({ type: SET_CALLS_DATA, data });

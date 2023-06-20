@@ -4,6 +4,18 @@
     border-bottom: 1px solid rgba(234, 240, 250, 1);
 }
 
+.inBody__row__data td:nth-child(1) {
+    padding-left: 40px;
+}
+
+.inBody__row__data:last-child {
+    padding-right: 40px;
+}
+
+.inBody__row__data__active {
+    background-color: blue;
+}
+
 .outgoing_true,
 .outgoing_false {
     transform: rotate(180deg);
@@ -28,6 +40,24 @@
     border-radius: 50%;
 }
 
-.contactName {
+.time__record {
+    padding-right: 40px;
+    text-align: end;
+}
 
+.inBody__row__data:hover {
+    background-color: rgba(212, 223, 243, 0.17);
+}
+
+.inBody__row__data:hover .player {
+    display: table-cell;
+}
+
+.inBody__row__data:hover .timeCall {
+    display: none;
+}
+
+.player {
+    display: none;
+    text-align: left;
 }

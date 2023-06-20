@@ -1,9 +1,12 @@
 
+import { useState } from 'react';
 import classes from './CallItem.module.css';
+import Player from './Player/Player';
 
 
 const CallItem = (props) => {
-    let typeSvgClassName, time;
+
+    let typeSvgClassName, callTime;
 
     if (props.status === 'Дозвонился') {
         typeSvgClassName = props.inOut === 1 ? 'incoming_true'
@@ -13,7 +16,7 @@ const CallItem = (props) => {
             : 'incoming_false';
     }
 
-    time = ['0' + new Date(props.fullDate).getHours(),
+    callTime = ['0' + new Date(props.fullDate).getHours(),
     '0' + new Date(props.fullDate).getMinutes()]
         .map(item => item.slice(-2)).join(':');
 
@@ -21,14 +24,14 @@ const CallItem = (props) => {
 
 
     return (
-        <tr className={classes.inBody__row__data}>
+        <tr className={classes.inBody__row__data} onClick={()=>props.getVoise(props.record,props.partnerId)}>
             <td>
                 <svg className={classes[typeSvgClassName]} width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M-1.04904e-05 11.3447L1.17703 12.5217L10.8522 2.8466L10.8522 8.34782H12.5217L12.5217 -1.04904e-05L4.1739 -1.04904e-05V1.66955L9.67512 1.66955L-1.04904e-05 11.3447Z" fill="#28A879" />
                 </svg>
             </td>
             <td>
-                {time}
+                {callTime}
             </td>
             <td>
                 <tr>
@@ -63,8 +66,9 @@ const CallItem = (props) => {
                 {props.source}
             </td>
             <td></td>
-            <td>
-                {props.time}
+            <td className={classes.time__record}>
+                {props.record && <div className={classes.timeCall}>{props.time}</div>}
+                {props.record ? <div className={classes.player}> <Player time={props.time} voise={props.voise}/></div> : props.time}
             </td>
         </tr>
     )
